@@ -1,0 +1,40 @@
+clear
+clc
+format long
+format compact
+hold on
+
+
+
+clear
+clc
+
+fprintf("Integral will be: %.9f", calc());
+
+function val = f(x)
+    val = x*x*x;
+end
+
+function val = calc()
+    w2 = 0.146446609;
+    x1 = 0.585786437;
+    x2 = 0.41421356;
+    w1 = 0.853553390;
+    val = (w1 *f(x1)) + (w2*f(x2));
+end
+
+
+
+
+clear
+clc
+
+fprintf("Integral will be: %.9f", calc(0,4));
+
+function val = f(x)
+    val = sin(x)/x;
+end
+
+function val = calc(a,b)
+    val = (b-a)/2 *((5/9 *f(-sqrt(3/5)) + (8/9) + (5/9 * f(sqrt(3/5)))));
+end
